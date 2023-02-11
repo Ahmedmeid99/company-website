@@ -1,0 +1,275 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #0064aa;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  height: 1000px;
+}
+.loading-intro {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1999;
+  background: #fff;
+  transition: 2s;
+}
+.loading-start {
+  animation: strat 1s linear;
+}
+.loading-done {
+  opacity: 0;
+  z-index: -1;
+}
+
+@keyframes strat {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes done {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loading-intro img {
+  animation: zoom-in 1s linear;
+  width: 60px;
+}
+@keyframes zoom-in {
+  0% {
+    width: 0;
+  }
+  25% {
+    width: 15px;
+  }
+  50% {
+    width: 30px;
+  }
+  75% {
+    width: 45px;
+  }
+  100% {
+    width: 60px;
+  }
+}
+.loading-intro span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--main-color);
+}
+.loading-intro p {
+  padding: 0 10px;
+  text-align: center;
+  color: #727272;
+  font-size: 14px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 1;
+}
+.logo span {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--main-color);
+}
+.menu-icon {
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  position: fixed;
+  top: 15px;
+  left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: 600;
+  box-shadow: 0px 0px 10px 2px rgb(0 0 0 / 10%);
+}
+.menu-icon .icon {
+  position: relative;
+}
+.menu-icon .close-icon svg,
+.menu-icon .open-icon svg {
+  color: var(--main-color);
+  position: relative;
+  top: -1px;
+}
+.hidden {
+  display: none !important;
+}
+.nav-bar {
+  width: 90%;
+  height: 70px;
+  position: relative;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -2px 8px 7px -7px rgb(0 0 0 / 10%);
+}
+.menu {
+  color: #fff;
+  background: var(--main-color);
+  position: fixed;
+  width: 0%;
+  height: 0vh;
+  top: -100px;
+  left: -100px;
+  z-index: 99;
+}
+
+.menu ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: inherit;
+}
+.azraq-open-menu {
+  width: 300px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  animation: azraq-open-menu 0.5s linear;
+}
+.azraq-close-menu {
+  animation: azraq-close-menu 0.5s linear !important;
+}
+@keyframes azraq-open-menu {
+  0% {
+    width: 0;
+    height: 0vh;
+    top: 20px;
+    left: 60px;
+    border-radius: 30%;
+  }
+
+  50% {
+    width: 150px;
+    height: 50vh;
+    top: 15px;
+    left: 30px;
+    border-radius: 50%;
+  }
+
+  100% {
+    width: 300px;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    border-radius: none;
+  }
+}
+@keyframes azraq-close-menu {
+  0% {
+    width: 300px;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    border-radius: none;
+  }
+
+  50% {
+    width: 150px;
+    height: 50vh;
+    top: 15px;
+    left: 30px;
+    border-radius: 50%;
+  }
+
+  100% {
+    width: 0px;
+    height: 0vh;
+    top: 20px;
+    left: 60px;
+    border-radius: 30%;
+  }
+}
+/* ........................ */
+@media (max-width: 500px) {
+  .azraq-open-menu {
+    width: 100%;
+  }
+  @keyframes azraq-open-menu {
+    0% {
+      width: 0%;
+      height: 0vh;
+      top: 20px;
+      left: 60px;
+      border-radius: 30%;
+    }
+    50% {
+      width: 50%;
+      height: 50vh;
+      top: 15px;
+      left: 30px;
+      border-radius: 50%;
+    }
+    100% {
+      width: 100%;
+      height: 100vh;
+      top: 0px;
+      left: 0px;
+      border-radius: none;
+    }
+  }
+  @keyframes azraq-close-menu {
+    0% {
+      width: 100%;
+      height: 100vh;
+      top: 0px;
+      left: 0px;
+      border-radius: none;
+    }
+    50% {
+      width: 50%;
+      height: 50vh;
+      top: 15px;
+      left: 30px;
+      border-radius: 50%;
+    }
+    100% {
+      width: 0%;
+      height: 0vh;
+      top: 20px;
+      left: 60px;
+      border-radius: 30%;
+    }
+  }
+}
